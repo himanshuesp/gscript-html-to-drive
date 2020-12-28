@@ -119,8 +119,8 @@ function record_data(e, fileUrls) {
         var row = [new Date()]; // first element in the row should always be a timestamp
         // loop through the header columns
         for (var i = 1; i < headers.length; i++) { // start at 1 to avoid Timestamp column
-            if (headers[i].length > 0 && headers[i] == "resume") {
-                row.push(JSON.stringify(fileUrls)); // add data to row
+            if (headers[i].length > 1 && headers[i] == "resume") {
+                row.push(fileUrls); // add data to row
             }
             else if (headers[i].length > 0) {
                 row.push(e.parameter[headers[i]]); // add data to row
